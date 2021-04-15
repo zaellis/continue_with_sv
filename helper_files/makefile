@@ -18,7 +18,7 @@
 
 PROJ :=
 TOP_LEVEL_FILE := $(PROJ).sv
-COMPONENT_FILES := reset_gen.sv
+COMPONENT_FILES :=
 TESTBENCH := tb_$(PROJ).sv
 
 TB_MODULE := $(notdir $(basename $(TEST_BENCH)))
