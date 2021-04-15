@@ -1,4 +1,4 @@
-# Makefile borrowed from https://github.com/cliffordwolf/icestorm/blob/master/examples/icestick/Makefile
+# Makefile inspired by https://github.com/cliffordwolf/icestorm/blob/master/examples/icestick/Makefile
 #
 # The following license is from the icestorm project and specifically applies to this file only:
 #
