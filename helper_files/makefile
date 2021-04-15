@@ -115,6 +115,8 @@ debug:
 	@echo "Done. See make_debug.text for debug output"
 
 intermediate/%.json: $(TOP_LEVEL_FILE) $(COMPONENT_FILES)
+	@mkdir -p intermediate/
+	@mkdir -p logs/ 
 	yosys -p 'synth_ice40 -top $(PROJ) -json $@' $^ -q -l logs/$(PROJ)_yosys.log
 
 intermediate/%.asc: intermediate/%.json $(PIN_DEF)
@@ -127,6 +129,7 @@ logs/%.rpt: intermediate/%.asc
 	icetime -d $(DEVICE) -mtr $@ $<
 
 mapped/%_syn.v: intermediate/%.json
+	@mkdir -p mapped/
 	yosys -p 'read_json $<; write_verilog $@' -q
 
 prog: $(PROJ).bin
