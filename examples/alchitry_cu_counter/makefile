@@ -15,7 +15,7 @@
 #  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 TOP_LEVEL_FILE := cu_top.sv
-COMPONENT_FILES := counter.sv
+COMPONENT_FILES := 
 
 # Note: For work using an Alchitry CU, do not change package, nor device.
 #       Changing the package will clash with the pcf file. Changing device
@@ -28,9 +28,9 @@ DEVICE := 8k
 
 all:
 	yosys -q -p "synth_ice40 -blif cu.blif" $(TOP_LEVEL_FILE) $(COMPONENT_FILES)
-	arachne-pnr -P $(DEVICE) -p $(PIN_DEF) -d $(DEVICE) cu.blif -o cu.txt
+	arachne-pnr -P $(PACKAGE) -p $(PIN_DEF) -d $(DEVICE) cu.blif -o cu.txt
 	icebox_explain cu.txt > cu.ex
-	icepack %cutxt cu.bin
+	icepack cu.txt cu.bin
 
 clean:
 	rm -f *.blif *.txt *.ex *.bin

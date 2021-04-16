@@ -1,0 +1,9 @@
+# MacOS desktop files
+.DS_Store
+.ds_store
+
+# Yosys/Arachne outputs
+*.bin
+*.blif
+*.ex
+*.txt
