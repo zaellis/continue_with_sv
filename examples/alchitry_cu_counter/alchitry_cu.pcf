@@ -1,13 +1,12 @@
-set_io --warn-no-port RX 9
-set_io --warn-no-port TX 8
-set_io LED1 99
-set_io LED2 98
-set_io LED3 97
-set_io LED4 96
-set_io LED5 95
-set_io clk 21
-set_io D1 1
-set_io D2 2
-set_io D3 3
-set_io D4 4
-set_io D5 94
+set_io clk P7
+set_io n_rst P8
+set_io led[0] J11
+set_io led[1] K11
+set_io led[2] K12
+set_io led[3] K14
+set_io led[4] L12
+set_io led[5] L14
+set_io led[6] M12
+set_io led[7] N14
+set_io usb_rx P14
+set_io usb_tx M9

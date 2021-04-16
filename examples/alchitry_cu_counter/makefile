@@ -17,14 +17,20 @@
 TOP_LEVEL_FILE := cu_top.sv
 COMPONENT_FILES := counter.sv
 
+# Note: For work using an Alchitry CU, do not change package, nor device.
+#       Changing the package will clash with the pcf file. Changing device
+#       would be plain dumb. I only leave these here in case the makefile is
+#       used elsewhere (but seriously, there are much better makefiles than this)
+
 PIN_DEF := alchitry_cu.pcf
 PACKAGE := cb132
+DEVICE := 8k
 
-%.bin:
-	yosys -q -p "synth_ice40 -blif %.blif" $(TOP_LEVEL_FILE) $(COMPONENT_FILES)
-	arachne-pnr -P $(DEVICE) -p $(PIN_DEF) %.blif -o %.txt
-	icebox_explain %.txt > %.ex
-	icepack %.txt %.bin
+all:
+	yosys -q -p "synth_ice40 -blif cu.blif" $(TOP_LEVEL_FILE) $(COMPONENT_FILES)
+	arachne-pnr -P $(DEVICE) -p $(PIN_DEF) -d $(DEVICE) cu.blif -o cu.txt
+	icebox_explain cu.txt > cu.ex
+	icepack %cutxt cu.bin
 
 clean:
 	rm -f *.blif *.txt *.ex *.bin
