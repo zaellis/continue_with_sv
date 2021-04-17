@@ -1,3 +1,4 @@
+# Alchitry CU
 set_io clk P7
 set_io n_rst P8
 set_io led[0] J11
@@ -10,3 +11,77 @@ set_io led[6] M12
 set_io led[7] N14
 set_io usb_rx P14
 set_io usb_tx M9
+
+# Alchitry IO Element
+# LED Banks
+set_io io_led[0][0] B21;
+set_io io_led[0][1] B20
+set_io io_led[0][2] B18
+set_io io_led[0][3] B17
+set_io io_led[0][4] B15
+set_io io_led[0][5] B14
+set_io io_led[0][6] B12
+set_io io_led[0][7] B11
+set_io io_led[1][0] B9
+set_io io_led[1][1] B8
+set_io io_led[1][2] B6
+set_io io_led[1][3] B5
+set_io io_led[1][4] B3
+set_io io_led[1][5] B2
+set_io io_led[1][6] A24
+set_io io_led[1][7] A23
+set_io io_led[2][0] A21
+set_io io_led[2][1] A20
+set_io io_led[2][2] A18
+set_io io_led[2][3] A17
+set_io io_led[2][4] A15
+set_io io_led[2][5] A14
+set_io io_led[2][6] A12
+set_io io_led[2][7] A11
+
+# DIP Switches
+set_io io_dip[0][0] B30
+set_io io_dip[0][1] B31
+set_io io_dip[0][2] B33
+set_io io_dip[0][3] B34
+set_io io_dip[0][4] B36
+set_io io_dip[0][5] B37
+set_io io_dip[0][6] B39
+set_io io_dip[0][7] B40
+set_io io_dip[1][0] B42
+set_io io_dip[1][1] B43
+set_io io_dip[1][2] B45
+set_io io_dip[1][3] B46
+set_io io_dip[1][4] B48
+set_io io_dip[1][5] B49
+set_io io_dip[1][6] A27
+set_io io_dip[1][7] A28
+set_io io_dip[2][0] A30
+set_io io_dip[2][1] A31
+set_io io_dip[2][2] A33
+set_io io_dip[2][3] A34
+set_io io_dip[2][4] A36
+set_io io_dip[2][5] A37
+set_io io_dip[2][6] A39
+set_io io_dip[2][7] A40
+
+# Buttons
+set_io io_button[0] B28
+set_io io_button[1] B27
+set_io io_button[2] B23
+set_io io_button[3] B24
+set_io io_button[4] C49
+
+set_io io_sel[0] A9
+set_io io_sel[1] A8
+set_io io_sel[2] A42
+set_io io_sel[3] A43
+
+set_io io_seg[0] A5
+set_io io_seg[1] A6
+set_io io_seg[2] A48
+set_io io_seg[3] A46
+set_io io_seg[4] A45
+set_io io_seg[5] A3
+set_io io_seg[6] A2
+set_io io_seg[7] A49
