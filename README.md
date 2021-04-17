@@ -8,7 +8,8 @@ Software and resources to help Purdue students (and others) continue developing 
   
 ## Repository Contents
 **docs**: documentation on the installation procedure of recommended software and related notes  
-helper_files: extra files I have created to run different software smoothly  
+  
+**helper_files**: extra files I have created to run different software smoothly  
   
 **examples**: example projects using this software and hopefully a variety of FPGA boards  
   
