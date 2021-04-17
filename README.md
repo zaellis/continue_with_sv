@@ -63,7 +63,7 @@ Depending on what development board you are using, you will probably encounter a
 #### tinyprog
 tinyprog is the bitstream loader for the TinyFPGA family of development boards. These dev boards come pre-loaded with a custom bootloader which allows programming to be done directly from USB. This is convenient in that it avoids needing to use a USB to SPI converter for flash programming (see [issues with FTDI](https://arstechnica.com/information-technology/2014/10/ftdis-anti-counterfeiting-efforts-sit-between-a-rock-and-a-hard-place/)), or a custom cable, but is otherwise just a novelty. tinyprog is currently used in the `prog` target of the [standard makefile](https://github.com/zaellis/continue_with_sv/blob/main/helper_files/makefile) for this repo.
 #### Alchitry Loader
-> More information on usage can be found in the [README](https://github.com/zaellis/continue_with_sv/blob/main/examples/alchitry_cu_counter/readme.md) in `examples/alchitry_cu_counter/`  
+> More information on usage can be found in the [README](https://github.com/zaellis/continue_with_sv/tree/main/examples/alchitry_cu_counter#getting-alchitry-loader-compiled) in `examples/alchitry_cu_counter/`  
   
 The Alchitry Loader can be used to flash the Alchitry family of FPGA dev boards. It will either need to be compiled before use, or downloaded as a precompiled binary.
 #### IceProg
