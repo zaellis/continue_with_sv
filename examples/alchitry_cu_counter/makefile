@@ -27,10 +27,15 @@ PACKAGE := cb132
 DEVICE := 8k
 
 all:
-	yosys -q -p "synth_ice40 -blif cu.blif" $(TOP_LEVEL_FILE) $(COMPONENT_FILES)
-	arachne-pnr -P $(PACKAGE) -p $(PIN_DEF) -d $(DEVICE) cu.blif -o cu.txt
-	icebox_explain cu.txt > cu.ex
+	@echo "Starting Yosys. View output in reports/synth.txt"
+	yosys -q -p "synth_ice40 -blif cu.blif" $(TOP_LEVEL_FILE) $(COMPONENT_FILES) 2>&1 | tee reports/synth.txt
+	@echo "\nStarting placement. View output in reports/place.txt"
+	arachne-pnr -P $(PACKAGE) -p $(PIN_DEF) -d $(DEVICE) cu.blif -o cu.txt 2>&1 | tee reports/place.txt
+	@echo "\nStarting explain. View output in reports/explain.ex"
+	icebox_explain cu.txt > reports/explain.ex
+	@echo "\nStarting packing"
 	icepack cu.txt cu.bin
 
 clean:
 	rm -f *.blif *.txt *.ex *.bin
+	rm -f reports/*
