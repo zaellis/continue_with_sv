@@ -47,7 +47,7 @@ Installation for the first three is trivial; the bash commands given will do the
 
 The Alchitry CU uses an FTDI IC (similar to what is used in the UART lab during ECE 362) to communicate via USB. Unfortunately, the drivers need manual installation
 to work, and the Alchitry Loader tool cannot be compiled without the libraries being installed. To do so, navigate to the link given above. Download the package
-that suits your system the best. Then, click (installation guides)[https://ftdichip.com/document/installation-guides/] and find the guide for the OS that suits you.
+that suits your system the best. Then, click [installation guides](https://ftdichip.com/document/installation-guides/) and find the guide for the OS that suits you.
 If you are using Linux, there is an extra step that is crucial to proper operation of the Alchitry Loader. You'll be able to compile it without this, but you won't
 be able to run the app without doing this.
 
