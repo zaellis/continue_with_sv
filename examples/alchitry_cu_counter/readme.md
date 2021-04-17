@@ -24,7 +24,7 @@ verify, and load System Verilog based creations onto the CU.
 - [x] Alchitry Loader install script
 - [x] Simple example
 - [x] Readme
-- [ ] Full PCF for Alchitry IO
+- [x] Full PCF for Alchitry IO
 - [ ] Testbench synthesis
 - [ ] Extended makefile
 - [ ] Vivado integration
