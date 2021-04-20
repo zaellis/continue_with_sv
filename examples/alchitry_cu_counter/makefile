@@ -22,7 +22,7 @@ COMPONENT_FILES :=
 #       would be plain dumb. I only leave these here in case the makefile is
 #       used elsewhere (but seriously, there are much better makefiles than this)
 
-PIN_DEF := alchitry_cu.pcf
+PIN_DEF := ../../pcf/alchitry_cu.pcf
 PACKAGE := cb132
 DEVICE := 8k
 

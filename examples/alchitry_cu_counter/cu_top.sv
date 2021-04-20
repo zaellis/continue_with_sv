@@ -11,8 +11,8 @@ module top
 
    assign usb_tx = usb_rx;             // Mirror input to output
 
-   always @ (posedge n_rst) begin      // "Increment" LEDs on rising edge of n_rst
-      led = led + 1;                   // Do the increment
+   always @ (posedge n_rst) begin
+      led <= led + 1;
    end
 
 endmodule
