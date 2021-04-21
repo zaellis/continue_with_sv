@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Make reports directory
+mkdir reports
+
 # Clone the repository
 git clone https://github.com/alchitry/alchitry-loader
 
