@@ -1,0 +1,2 @@
+# Vivado Install / Setup
+Go [here](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools/2020-3.html) for now. I'm confident you can figure it out but eventually this will be a better resource. Try to see the smallest install size you can get. Can you get <30GB?

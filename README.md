@@ -17,7 +17,7 @@ Software and resources to help Purdue students (and others) continue developing 
 - Increase awareness for development tools I enjoy using  
   
 ## Repository Contents
-**docs**: documentation on the installation procedure of recommended software and related notes  
+**[docs](https://github.com/zaellis/continue_with_sv/tree/main/docs)**: documentation on the installation procedure of recommended software and related notes  
   
 **[helper_files](https://github.com/zaellis/continue_with_sv/tree/main/helper_files)**: extra files I have created to run different software smoothly  
   
@@ -77,7 +77,7 @@ Vivado is Xilinx's all in one IDE for their FPGA products. It can be incredibly 
 #### Full Language Support
 Unfortunately at this point in time, in terms of FOSS tools, development is exclusively SystemVerilog is both a blessing and a curse. SystemVerilog is a very powerful language for both hardware description and simulation, however the complexities and features it brings are not always supported by every tool. Xilinx being a major player in the FPGA space however, does have the resources to integrate SystemVerilog language support into their IDE. The biggest reason I choose to use Vivado for simulation is the fact that it allows me to continue writing my testbenches how I was taught in ECE337 at Purdue, and it replicates the environment of QuestaSim fairly well.
 #### Ease of Use (*)
-Luckily for those of you who take advantage of this repository, I have spent countless hours pouring over the [Vivado Tcl Command Reference Guide](https://www.xilinx.com/support/documentation/sw_manuals/xilinx2017_4/ug835-vivado-tcl-commands.pdf) to try and create a very smooth workflow for those choosing Vivado to simulate Lattice iCE40 based designs. While I don't think my script is all encompassing and I am always looking to improve it, I think it does a great job of turning the mess of project / workspace setup and compiling it all into one command. I am also very happy to see that it can also do post-synthesis simulation for more realistic final verification. But enough tooting my own horn, I'm sure someone who actually knows how to write Tcl could put my script to shame.
+Luckily for those of you who take advantage of this repository, I have spent countless hours pouring over the [Vivado Tcl Command Reference Guide](https://www.xilinx.com/support/documentation/sw_manuals/xilinx2018_1/ug835-vivado-tcl-commands.pdf) to try and create a very smooth workflow for those choosing Vivado to simulate Lattice iCE40 based designs. While I don't think my script is all encompassing and I am always looking to improve it, I think it does a great job of turning the mess of project / workspace setup and compiling it all into one command. I am also very happy to see that it can also do post-synthesis simulation for more realistic final verification. But enough tooting my own horn, I'm sure someone who actually knows how to write Tcl could put my script to shame.
 #### Free (*)
 While the full version of Vivado is not free, Vivado webpack is. In terms of my needs as a simulation platform, not needing to take advantage of Xilinx specific tools, I haven't run into any roadblocks in terms of performance
 #### Cons of Using Vivado
