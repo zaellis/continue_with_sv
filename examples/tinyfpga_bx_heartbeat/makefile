@@ -59,7 +59,8 @@ PACKAGE := cm81
 #Maybe More???!!!!?!?!??!??!!!?!?!?!?
 
 #It's possible this is not the right path for you. Lets see how good my install script gets
-SIM_CELLS := ~/Documents/FPGA_dev/icestorm-build/yosys/techlibs/ice40/cells_sim.v
+#Update install script works and this is more than likely to be correct if you used it
+SIM_CELLS := ~/FPGA_dev/yosys/techlibs/ice40/cells_sim.v
 
 SIM_LIBRARY := $(notdir $(SIM_CELLS))
 
