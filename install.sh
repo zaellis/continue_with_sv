@@ -5,7 +5,7 @@
 # yosys and nextpnr. A little bit of directory and environment setup is also done
 #################################################################################
 
-#THIS SHOULD BE ALL YOU NEED TO GET STARTED BUT I HAVEN'T TESTED IT YET. BE CAREFUL
+#This is working at the moment but there is still more to be desired for me...
 
 #location where this Github repo is downloaded
 CURR_DIR=$(pwd)
@@ -16,7 +16,8 @@ mkdir -p FPGA_Dev
 cd FPGA_Dev
 
 #project icestorm tools
-if [! -d ~/FPGA_Dev/icestorm]
+if [ ! -d ~/FPGA_Dev/icestorm ]
+then
     sudo apt-get install build-essential clang bison flex libreadline-dev \
                         gawk tcl-dev libffi-dev git mercurial graphviz   \
                         xdot pkg-config python python3 libftdi-dev \
@@ -30,7 +31,8 @@ if [! -d ~/FPGA_Dev/icestorm]
 fi
 
 #nextpnr for iCE40 devices
-if [! -d ~/FPGA_Dev/nextpnr]
+if [ ! -d ~/FPGA_Dev/nextpnr ]
+then
     git clone https://github.com/YosysHQ/nextpnr.git nextpnr
     cd nextpnr
     cmake . -DARCH=ice40
@@ -40,7 +42,8 @@ if [! -d ~/FPGA_Dev/nextpnr]
 fi
 
 #yosys
-if [! -d ~/FPGA_Dev/yosys]
+if [ ! -d ~/FPGA_Dev/yosys ]
+then
     git clone https://github.com/YosysHQ/yosys.git yosys
     cd yosys
     make -j$(nproc)
@@ -50,14 +53,14 @@ fi
 
 #setting up enviroment
 #probably could narrow down search to the tools directory but I'm paranoid
-VIVADO_SETUP=$(sudo find / -name settings64.sh | grep Vivado)
+VIVADO_SETUP=$(sudo find / -name settings64.sh 2> /dev/null | grep Vivado)
 
-if [-z VIVADO_SETUP]
+if [ ${#VIVADO_SETUP} -eq 0 ]
 then
     echo "Vivado environment setup not detected. If you decide to install Vivado run this again"
 else
     #make sure not to bloat .bashrc too much (Hopefully this works)
-    command -v vivado &> /dev/null || echo "source ./$VIVADO_SETUP" >> ~/.bashrc
+    command -v vivado || echo "source ./$VIVADO_SETUP" >> ~/.bashrc
 fi
 
 #copy useful files for every project to a known location
@@ -66,7 +69,7 @@ cp -r $CURR_DIR/helper_files/reset_gen.sv .
 cp -r $CURR_DIR/helper_files/vivado_manage.tcl .
 
 #make sure not to bloat .bashrc too much (Hopefully this works)
-command -v setup_FPGA &> /dev/null || echo -e "function setup_FPGA(){\n \
+cat ~/.bashrc | grep setup_FPGA &> /dev/null || echo -e "function setup_FPGA(){\n \
     \techo copying base files...\n \
     \tcp -r ~/FPGA_Dev/makefile .\n \
     \tcp -r ~/FPGA_Dev/reset_gen.sv .\n \
