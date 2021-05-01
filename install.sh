@@ -88,10 +88,10 @@ then
     #this could take quite a while but it should encompass all possibilities
     CELL_FILE=$(sudo find / -name cells_sim.v | grep techlibs/ice40)
     #insert proper location into makefile
-    sed -ie "s/^SIM_CELLS :=/SIM_CELLS := $CELL_FILE/" makefile
+    sed -i "s#^SIM_CELLS :=.*#SIM_CELLS := $CELL_FILE#" makefile
 else
     #insert proper location into makefile
-    sed -ie "s/^SIM_CELLS :=/SIM_CELLS := $CELL_FILE/" makefile    
+    sed -i "s#^SIM_CELLS :=.*#SIM_CELLS := $CELL_FILE#" makefile
 fi
 
 #rerun .bashrc and reset terminal (this might be redundant)
