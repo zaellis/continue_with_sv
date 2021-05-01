@@ -1,11 +1,9 @@
 #!/usr/bin/env bash
 
-#################################################################################
-# Bash Script to automate downloading most of the tools. Namely project icestorm
-# yosys and nextpnr. A little bit of directory and environment setup is also done
-#################################################################################
-
-#This is working at the moment but there is still more to be desired for me...
+##################################################################################
+# Bash Script to automate downloading most of the tools. Namely project icestorm,
+# yosys, and nextpnr. A little bit of directory and environment setup is also done
+##################################################################################
 
 #location where this Github repo is downloaded
 CURR_DIR=$(pwd)
@@ -82,10 +80,20 @@ cat ~/.bashrc | grep setup_FPGA &> /dev/null || echo -e "function setup_FPGA(){\
     \techo done\n \
 }" >> ~/.bashrc
 
-CELL_FILE=$(find ~/FPGA_Dev/yosys/ -name cells_sim.v | grep ice40)
+#add correct sim_cells file location to the base makefile
+CELL_FILE=$(find ~/FPGA_Dev/yosys/ -name cells_sim.v | grep techlibs/ice40)
 
-#need to figure out how to insert this into the makefile
-#I can do it I'm just lazy
+if [ ${#CELL_FILE} -eq 0 ]
+then
+    #this could take quite a while but it should encompass all possibilities
+    CELL_FILE=$(sudo find / -name cells_sim.v | grep techlibs/ice40)
+    #insert proper location into makefile
+    sed -ie "s/^SIM_CELLS :=/SIM_CELLS := $CELL_FILE/" makefile
+else
+    #insert proper location into makefile
+    sed -ie "s/^SIM_CELLS :=/SIM_CELLS := $CELL_FILE/" makefile    
+fi
 
+#rerun .bashrc and reset terminal (this might be redundant)
 source ~/.bashrc
 reset
