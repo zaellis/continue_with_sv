@@ -16,7 +16,7 @@ mkdir -p FPGA_Dev
 cd FPGA_Dev
 
 #project icestorm tools
-if [ ! -d ~/FPGA_Dev/icestorm ]
+if [ ! command -v icepack &> /dev/null ]
 then
     sudo apt-get install build-essential clang bison flex libreadline-dev \
                         gawk tcl-dev libffi-dev git mercurial graphviz   \
@@ -31,7 +31,7 @@ then
 fi
 
 #nextpnr for iCE40 devices
-if [ ! -d ~/FPGA_Dev/nextpnr ]
+if [ ! command -v nextpnr-ice40 &> /dev/null ]
 then
     git clone https://github.com/YosysHQ/nextpnr.git nextpnr
     cd nextpnr
@@ -42,7 +42,7 @@ then
 fi
 
 #yosys
-if [ ! -d ~/FPGA_Dev/yosys ]
+if [ ! command -v yosys &> /dev/null ]
 then
     git clone https://github.com/YosysHQ/yosys.git yosys
     cd yosys
@@ -88,3 +88,4 @@ CELL_FILE=$(find ~/FPGA_Dev/yosys/ -name cells_sim.v | grep ice40)
 #I can do it I'm just lazy
 
 source ~/.bashrc
+reset
