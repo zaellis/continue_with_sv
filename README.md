@@ -120,7 +120,6 @@ Verilator is an advanced Verilog/SystemVerilog simulation tool which aims to red
 [EDA playground](https://www.edaplayground.com/home) is a web based simulation software that is often recommended to beginners or those who don't have the ability to support simulation software locally. It is a pretty capable tool and also integrates with EPWave for some basic waveform viewing as well. Some of the great things about EDA playground is that is supports full SystemVerilog, allows users to take advantage of a wide range of simulators including commercial ones like Mentor Questa (just without the UI), and can also support sharing of "playgrounds" between users and the public if that is desired. The reason I don't use EDA playground personally is mainly that I don't enjoy browser based tools. Additionally while EDA playground is very capable it can be difficult to create projects with multiple module files within the UI. Finally, EDA playground uses vvp assembly like Icarus Verilog as a go between simulation and waveform viewing that I think makes the experience less configurable on the fly. I would recommend this tool to people who are curious about RTL development and don't want to install a large number of software packages locally.
 
 ## TODO
-- write all in one install script / document installation commands
 - validate POR module (reset_gen.sv) is really the best method
 - add example projects and pcf files for more boards
 - add information to the further reading section
