@@ -1,6 +1,4 @@
 # Installation Instructions
-> TBH I haven't tested these all exactly since I installed a long time ago. However when I get this verified this message will go away.  
-
 I recommend installing everything in a directory somewhere you will remember. Lots of these repositories contain good examples of their own and also contain files referenced by the makefile. For board specific tools like loaders I recommend checking the examples portion of this repository for more specific information. It is possible that some boards may support iceprog in which case nothing else is needed. 
 
 ```
