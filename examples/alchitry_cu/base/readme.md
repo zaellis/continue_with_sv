@@ -60,7 +60,7 @@ your password. This will configure the installed libraries and allow the Alchitr
 To get Alchitry Loader running, you have two options: build from source (recommended) or download release 0.1 from GitHub. The release contains a compiled binary
 as well as the source code in a tar.xz archive. You can download this and stick the loader in with the project files for easy access. The other, and more
 preferable approach is to use the given install script to clone the source code and compile the source locally. To do this, clone this repository, give execute
-permissions to `install.sh` using `sudo chmod +x install.sh` and execute the install script using `./install`. This script will clone the repo, cd in, and
+permissions to `install.sh` using `sudo chmod +x install.sh` and execute the install script using `sudo ./install`. This script will clone the repo, cd in, and
 compile the source using g++ and the D2XX library we installed above. If you don't have the drivers/library installed at this point, you'll get a compilation error.
 If you do, you'll get compilation warnings (~70), but they don't impact operation from what's been observed to this point. More information on using the loader will
 follow.
